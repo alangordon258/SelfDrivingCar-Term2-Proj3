@@ -8,7 +8,7 @@ This repository contains my submission for the Kidnapped Vehicle Project, which 
 
 [//]: # (Image References)
 
-[image1]: ResultScreenshot.png "Result Screenshot"
+[image1]: ResultScreenShot.png "Result Screenshot"
 [image2]: ErrorvsNumParticles.png "Error vs # of Particles"
 
 ![alt text][image1]
