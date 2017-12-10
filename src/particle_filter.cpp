@@ -49,7 +49,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
     
     // define normal distributions for sensor noise
 
-    double xzero, yzero, thetazero, thetafinal;
+    double xzero, yzero, thetazero, thetafinal, epsilon=0.00001;
     Particle particle;
     vector<Particle>::iterator it;
     default_random_engine gen;
@@ -64,7 +64,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
         yzero=particles[i].y;
         thetazero=particles[i].theta;
         thetafinal=thetazero+yaw_rate*delta_t;
-        if (fabs(yaw_rate) < 0.00001) {
+        if (fabs(yaw_rate) < epsilon) {
              particles[i].x = xzero + velocity * delta_t * cos(particles[i].theta);
              particles[i].y = yzero + velocity * delta_t * sin(particles[i].theta);
          }
